@@ -1,0 +1,23 @@
+{
+  "name": "conf-merch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorian-morones/conf-merch.git"
+  },
+  "author": "Dorian Morones <dorianm393@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dorian-morones/conf-merch/issues"
+  },
+  "homepage": "https://github.com/dorian-morones/conf-merch#readme",
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
