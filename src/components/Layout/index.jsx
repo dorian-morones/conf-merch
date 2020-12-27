@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   MainContainer,
   Header,
@@ -6,11 +6,10 @@ import {
   Title,
   Body,
   Footer,
-  FooterItem
-} from './styles/layout';
+  FooterItem,
+} from "./styles/layout";
 
 const Layout = ({ children }) => {
-
   console.log(children);
 
   return (
@@ -19,15 +18,13 @@ const Layout = ({ children }) => {
         <Title>Conf Merch</Title>
         <Checkout>Checkout</Checkout>
       </Header>
-      <Body>
-        {children}
-      </Body>
+      <Body>{children}</Body>
       <Footer>
         <FooterItem>Official Conference Merch</FooterItem>
         <FooterItem>All rights reserved</FooterItem>
       </Footer>
     </MainContainer>
-  )
-}
+  );
+};
 
 export default Layout;
