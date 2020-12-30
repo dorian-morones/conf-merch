@@ -16,7 +16,6 @@ export const InfoButtons = styled.div`
   align-items: center;
 `;
 
-
 export const InfoSidebar = styled.div`
   margin: 10px 0 0 0;
 `;
@@ -37,14 +36,14 @@ export const InfoElement = styled.div`
   align-items: center;
   width: 100%;
   border-bottom: 1px solid #eee;
-`
+`;
 
 export const Input = styled.input`
   background-color: #fff;
   background-image: none;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
-  color: rgba(0,0,0,0.75);
+  color: rgba(0, 0, 0, 0.75);
   display: inline-block;
   font-feature-settings: "tnum";
   font-size: 14px;
@@ -56,4 +55,4 @@ export const Input = styled.input`
   padding: 4px 12px;
   width: 100%;
   box-sizing: border-box;
-`
+`;

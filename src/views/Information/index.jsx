@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   InfoContainer,
   InfoButtons,
@@ -6,12 +6,11 @@ import {
   InfoBack,
   InfoItem,
   InfoElement,
-  Input
-} from './styles/Info';
+  Input,
+} from "./styles/Info";
 
 const Information = () => {
-
-  console.log('information');
+  console.log("information");
 
   return (
     <InfoContainer>
@@ -33,12 +32,8 @@ const Information = () => {
           </form>
         </div>
         <InfoButtons>
-          <InfoBack>
-            Regresar
-          </InfoBack>
-          <div className="Information-next">
-            pagar
-          </div>
+          <InfoBack>Regresar</InfoBack>
+          <div className="Information-next">pagar</div>
         </InfoButtons>
       </div>
       <InfoSidebar>
@@ -52,6 +47,6 @@ const Information = () => {
       </InfoSidebar>
     </InfoContainer>
   );
-}
+};
 
 export default Information;
