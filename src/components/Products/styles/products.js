@@ -15,14 +15,14 @@ export const ItemContainer = styled.div`
   justify-content: space-between;
 
   text-decoration: none;
-  box-shadow: 8px 14px 38px rgba(39,44,49,0.06), 1px 3px 8px rgba(39,44,49,0.03);
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
 `;
 
-export const MediaContainer = styled.div`
-`;
+export const MediaContainer = styled.div``;
 
 export const InfoContainer = styled.div`
   padding: 10px;

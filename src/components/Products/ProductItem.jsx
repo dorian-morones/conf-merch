@@ -1,15 +1,18 @@
-import React from 'react';
+import React from "react";
 import {
   ItemContainer,
   ItemImage,
   MediaContainer,
   InfoContainer,
   Title,
-  BuyButton
-} from './styles/products';
+  BuyButton,
+} from "./styles/products";
 
 const Products = ({ product }) => {
-  console.log("🚀 ~ file: ProductItem.jsx ~ line 7 ~ Products ~ product", product)
+  console.log(
+    "🚀 ~ file: ProductItem.jsx ~ line 7 ~ Products ~ product",
+    product
+  );
   const { title, image, price, description } = product;
   return (
     <ItemContainer>
@@ -19,10 +22,10 @@ const Products = ({ product }) => {
       <InfoContainer>
         <Title>{`${title} - $${price}`}</Title>
         <Title>{description}</Title>
-        <BuyButton type='button'>Comprar</BuyButton>
+        <BuyButton type="button">Comprar</BuyButton>
       </InfoContainer>
     </ItemContainer>
-  )
-}
+  );
+};
 
 export default Products;
