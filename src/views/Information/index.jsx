@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from "react";
-import AppContext from '../../context/AppContext';
+import AppContext from "../../context/AppContext";
 import { Link, useHistory } from "react-router-dom";
 import {
   InfoContainer,
@@ -12,7 +12,6 @@ import {
 } from "./styles/Info";
 
 const Information = () => {
-
   const { state, addToBuyer } = useContext(AppContext);
   const form = useRef(null);
   const { cart } = state;
@@ -20,19 +19,19 @@ const Information = () => {
   const handleSubmit = () => {
     const formData = new FormData(form.current);
     const buyer = {
-      'name': formData.get('name'),
-      'email': formData.get('email'),
-      'address': formData.get('address'),
-      'apto': formData.get('apto'),
-      'city': formData.get('city'),
-      'country': formData.get('country'),
-      'state': formData.get('state'),
-      'cp': formData.get('cp'),
-      'phone': formData.get('phone'),
-    }
+      name: formData.get("name"),
+      email: formData.get("email"),
+      address: formData.get("address"),
+      apto: formData.get("apto"),
+      city: formData.get("city"),
+      country: formData.get("country"),
+      state: formData.get("state"),
+      cp: formData.get("cp"),
+      phone: formData.get("phone"),
+    };
     addToBuyer(buyer);
-    history.push('/checkout/payment')
-  }
+    history.push("/checkout/payment");
+  };
 
   return (
     <InfoContainer>
@@ -58,7 +57,13 @@ const Information = () => {
             <InfoBack>Regresar</InfoBack>
           </Link>
           <Link to="/checkout/payment">
-            <button type="button" className="Information-next" onClick={handleSubmit}>pagar</button>
+            <button
+              type="button"
+              className="Information-next"
+              onClick={handleSubmit}
+            >
+              pagar
+            </button>
           </Link>
         </InfoButtons>
       </div>
