@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useRef } from "react";
+import AppContext from '../../context/AppContext';
+import { Link, useHistory } from "react-router-dom";
 import {
   InfoContainer,
   InfoButtons,
@@ -11,7 +12,27 @@ import {
 } from "./styles/Info";
 
 const Information = () => {
-  console.log("information");
+
+  const { state, addToBuyer } = useContext(AppContext);
+  const form = useRef(null);
+  const { cart } = state;
+  const { history } = useHistory();
+  const handleSubmit = () => {
+    const formData = new FormData(form.current);
+    const buyer = {
+      'name': formData.get('name'),
+      'email': formData.get('email'),
+      'address': formData.get('address'),
+      'apto': formData.get('apto'),
+      'city': formData.get('city'),
+      'country': formData.get('country'),
+      'state': formData.get('state'),
+      'cp': formData.get('cp'),
+      'phone': formData.get('phone'),
+    }
+    addToBuyer(buyer);
+    history.push('/checkout/payment')
+  }
 
   return (
     <InfoContainer>
@@ -20,7 +41,7 @@ const Information = () => {
           <h2>Informacion de contacto:</h2>
         </div>
         <div className="Information-form">
-          <form action="">
+          <form ref={form}>
             <Input type="text" placeholder="Nombre completo" name="name" />
             <Input type="text" placeholder="Correo Electronico" name="email" />
             <Input type="text" placeholder="Direccion" name="address" />
@@ -37,18 +58,20 @@ const Information = () => {
             <InfoBack>Regresar</InfoBack>
           </Link>
           <Link to="/checkout/payment">
-            <div className="Information-next">pagar</div>
+            <button type="button" className="Information-next" onClick={handleSubmit}>pagar</button>
           </Link>
         </InfoButtons>
       </div>
       <InfoSidebar>
         <h3>Pedido:</h3>
-        <InfoItem>
-          <InfoElement>
-            <h4>ITEM Name</h4>
-            <span>$10</span>
-          </InfoElement>
-        </InfoItem>
+        {cart.map((item) => (
+          <InfoItem>
+            <InfoElement>
+              <h4>{item.title}</h4>
+              <span>{`$${item.price}`}</span>
+            </InfoElement>
+          </InfoItem>
+        ))}
       </InfoSidebar>
     </InfoContainer>
   );
