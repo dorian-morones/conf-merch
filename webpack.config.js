@@ -49,12 +49,14 @@ module.exports = {
       filename: 'assets/[name].css'
     })
   ],
+  devtool: 'eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     historyApiFallback: true,
     port: 3000,
     open: true,
+    hot: true,
   },
   optimization: {
     minimize: true,
