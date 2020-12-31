@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   CheckoutContainer,
   Item,
@@ -22,12 +23,12 @@ const Checkout = () => {
             <Title>ITEM name</Title>
             <Text>$10</Text>
           </Element>
-          <Delete type="button">Eliminar</Delete>
+          <Delete type="button"><i class="fas fa-trash-alt" /></Delete>
         </Item>
       </div>
       <Sidebar>
         <h3>Precio Total: $10</h3>
-        <SidebarButton type="button">Continuar pedido</SidebarButton>
+        <Link to="/checkout/information"><SidebarButton type="button">Continuar pedido</SidebarButton></Link>
       </Sidebar>
     </CheckoutContainer>
   );

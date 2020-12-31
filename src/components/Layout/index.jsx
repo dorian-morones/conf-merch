@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   MainContainer,
   Header,
@@ -15,8 +16,8 @@ const Layout = ({ children }) => {
   return (
     <MainContainer>
       <Header>
-        <Title>Conf Merch</Title>
-        <Checkout>Checkout</Checkout>
+        <Link to="/"><Title>Conf Merch</Title></Link>
+        <Checkout><Link to='/checkout'><i class="fas fa-shopping-basket" /></Link></Checkout>
       </Header>
       <Body>{children}</Body>
       <Footer>

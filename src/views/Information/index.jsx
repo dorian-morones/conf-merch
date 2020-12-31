@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import {
   InfoContainer,
   InfoButtons,
@@ -32,8 +33,8 @@ const Information = () => {
           </form>
         </div>
         <InfoButtons>
-          <InfoBack>Regresar</InfoBack>
-          <div className="Information-next">pagar</div>
+          <Link to="/checkout"><InfoBack>Regresar</InfoBack></Link>
+          <Link to="/checkout/payment"><div className="Information-next">pagar</div></Link>
         </InfoButtons>
       </div>
       <InfoSidebar>
