@@ -8,11 +8,8 @@ import {
   BuyButton,
 } from "./styles/products";
 
-const Products = ({ product }) => {
-  console.log(
-    "🚀 ~ file: ProductItem.jsx ~ line 7 ~ Products ~ product",
-    product
-  );
+const Products = ({ product, handleAddToCart }) => {
+
   const { title, image, price, description } = product;
   return (
     <ItemContainer>
@@ -22,7 +19,7 @@ const Products = ({ product }) => {
       <InfoContainer>
         <Title>{`${title} - $${price}`}</Title>
         <Title>{description}</Title>
-        <BuyButton type="button">Comprar</BuyButton>
+        <BuyButton type="button" onClick={handleAddToCart(product)}>Comprar</BuyButton>
       </InfoContainer>
     </ItemContainer>
   );

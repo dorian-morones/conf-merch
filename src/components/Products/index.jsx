@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductItem from "./ProductItem";
-
+import AppContext from '../../context/AppContext';
 import { ProductList } from "./styles/products";
 
-const Products = ({ products }) => {
-  console.log("🚀 ~ file: index.jsx ~ line 7 ~ Products ~ products", products);
+const Products = () => {
+  const { state, addToCart } = useContext(AppContext);
+  const { products } = state;
+
+  const handleAddToCart = product => () => {
+    addToCart(product)
+  }
 
   return (
     <ProductList>
-      {products &&
-        products.map((item) => <ProductItem key={item.id} product={item} />)}
+      {products && products !== undefined &&
+        products.map((item) => <ProductItem key={item.id} product={item} handleAddToCart={handleAddToCart} />)}
     </ProductList>
   );
 };

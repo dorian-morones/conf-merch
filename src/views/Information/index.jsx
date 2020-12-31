@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   InfoContainer,
   InfoButtons,
@@ -33,8 +33,12 @@ const Information = () => {
           </form>
         </div>
         <InfoButtons>
-          <Link to="/checkout"><InfoBack>Regresar</InfoBack></Link>
-          <Link to="/checkout/payment"><div className="Information-next">pagar</div></Link>
+          <Link to="/checkout">
+            <InfoBack>Regresar</InfoBack>
+          </Link>
+          <Link to="/checkout/payment">
+            <div className="Information-next">pagar</div>
+          </Link>
         </InfoButtons>
       </div>
       <InfoSidebar>
