@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import AppContext from '../../context/AppContext';
+import AppContext from "../../context/AppContext";
 import {
   CheckoutContainer,
   Item,
@@ -13,19 +13,19 @@ import {
 } from "./styles/checkout";
 
 const Checkout = () => {
-
   const { state, removeFromCart } = useContext(AppContext);
   const { cart } = state;
 
-  const handleRemove = product => () => {
+  const handleRemove = (product) => () => {
     removeFromCart(product);
   };
 
   const handleSumTotal = () => {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+    const reducer = (accumulator, currentValue) =>
+      accumulator + currentValue.price;
     const sum = cart.reduce(reducer, 0);
     return sum;
-  }
+  };
 
   return (
     <CheckoutContainer>
@@ -37,7 +37,7 @@ const Checkout = () => {
               <Title>{item.title}</Title>
               <Text>{`$${item.price}`}</Text>
             </Element>
-            <Delete type="button" onClick={handleRemove(item)} >
+            <Delete type="button" onClick={handleRemove(item)}>
               <i className="fas fa-trash-alt" />
             </Delete>
           </Item>

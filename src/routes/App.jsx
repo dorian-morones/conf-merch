@@ -14,11 +14,10 @@ import Payment from "../views/Payment";
 import Success from "../views/Success";
 import NotFound from "../views/NotFound";
 
-import AppContext from '../context/AppContext';
-import useInitialState from '../hooks/useInitialState';
+import AppContext from "../context/AppContext";
+import useInitialState from "../hooks/useInitialState";
 
 const App = () => {
-
   const initialState = useInitialState();
 
   return (
@@ -36,7 +35,7 @@ const App = () => {
         </Layout>
       </BrowserRouter>
     </AppContext.Provider>
-  )
+  );
 };
 
 export default App;

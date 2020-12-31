@@ -9,7 +9,6 @@ import {
 } from "./styles/products";
 
 const Products = ({ product, handleAddToCart }) => {
-
   const { title, image, price, description } = product;
   return (
     <ItemContainer>
@@ -19,7 +18,9 @@ const Products = ({ product, handleAddToCart }) => {
       <InfoContainer>
         <Title>{`${title} - $${price}`}</Title>
         <Title>{description}</Title>
-        <BuyButton type="button" onClick={handleAddToCart(product)}>Comprar</BuyButton>
+        <BuyButton type="button" onClick={handleAddToCart(product)}>
+          Comprar
+        </BuyButton>
       </InfoContainer>
     </ItemContainer>
   );
